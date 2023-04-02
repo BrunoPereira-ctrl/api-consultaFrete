@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bruno.apiconsultaFrete.models.EnderecoFrete;
+import com.bruno.apiconsultaFrete.dto.EnderecoFreteDTO;
 import com.bruno.apiconsultaFrete.service.EnderecoService;
 
 @RestController
@@ -20,7 +20,8 @@ public class EnderecoController {
     }
 
     @PostMapping
-    public ResponseEntity<EnderecoFrete> consultaEndereco(@RequestBody String cep) {
-        return enderecoService.consultaEndereco(cep);
+    public ResponseEntity<EnderecoFreteDTO> consultaEndereco(@RequestBody String cep) {
+        EnderecoFreteDTO enderecoFrete = enderecoService.consultaEnderecoComFrete(cep);
+        return ResponseEntity.ok(enderecoFrete);
     }
 }
