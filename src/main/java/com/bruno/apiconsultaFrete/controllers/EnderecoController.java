@@ -10,7 +10,7 @@ import com.bruno.apiconsultaFrete.dto.EnderecoFreteDTO;
 import com.bruno.apiconsultaFrete.service.EnderecoService;
 
 @RestController
-@RequestMapping("/api/consulta-endereco")
+@RequestMapping("v1/consulta-endereco")
 public class EnderecoController {
 	
 	private final EnderecoService enderecoService;
